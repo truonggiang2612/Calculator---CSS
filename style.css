@@ -1,0 +1,170 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: consolas;
+}
+body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #edf1f4;
+}
+.text-center {
+      position: fixed;
+      top: 100px;
+      font-size: 1rem;
+      letter-spacing: 2px;
+}
+
+.calculator {
+      position: relative;
+      width: 340px;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1),
+      -15px -15px 20px #fffb;
+}
+.calculator .buttons {
+      position: relative;
+      display: grid;
+}
+.calculator .buttons #value {
+      position: relative;
+      grid-column: span 4;  /* Chia thẻ span thành 4 cột*/
+      user-select: none;  /* K cho user chọn, bôi đen để copy*/
+      overflow: none;
+      width: 100%;
+      text-align: end;
+      color: #5166d6;
+      height: 100px;
+      line-height: 100px;
+      box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+      inset -5px -5px 20px #fff;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      padding: 0 20px;
+      font-size: 2em;
+      font-weight: 500;
+      overflow: hidden;
+}
+.calculator .buttons span {
+      position: relative;
+      margin: 10px;
+      padding: 10px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+      -5px -5px 20px #fffb;
+      min-width: 40px;
+      user-select: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2em;
+      color: #666;
+      border: 2px solid #edf1f4;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+      -5px -5px 10px #fff;
+      border-radius: 10px;
+}
+
+/* Tạo cảm giác nhấn vào */
+.calculator .buttons span:active {
+      box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+     inset -5px -5px 10px #fff;  
+     color: #f44336;
+}
+
+/* Nút Clear*/
+#clear {
+      grid-column: span 2;
+      background: #f44336;
+      color: #fff;
+      border: 2px solid #edf1f4;
+}
+
+/* Nút + */
+#plus {
+      grid-row: span 2;
+      background: #31a935;
+      color: #fff;
+      border: 2px solid #edf1f4;
+}
+
+/* Nút = */
+#equal {
+      grid-row: span 2;
+      background: #2196f3;
+      color: #fff;
+      border: 2px solid #edf1f4;
+}
+
+#clear:active,
+#plus:active,
+#equal:active {
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+      -5px -5px 10px #fff,
+      inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+      color: #0e0f0f;
+}
+
+/* Nút toggleBtn - click đổi màu*/
+.toggleBtn button {
+      position: fixed;
+      width: 100px;
+      height: 30px;
+      background: #555;
+      top: 50px;
+      right: 50px;
+      border: none;
+      border-radius: 20px;
+      color: #fff;
+      font-size: 0.8em;
+      cursor: pointer;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+      -5px -5px 10px #fff;
+}
+.toggleBtn button:active {
+      box-shadow: inset 5px 5px 10px #f3d421;
+      color: #0e0f0f;
+}
+
+/* Class dark được toggle*/
+.dark {
+      background: #282c2f;
+}
+.dark .text-center {
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff,
+      0 0 50px #fff; /* đoạn text này sáng như 1 ánh trăng*/ 
+}
+.dark .calculator {
+      background: #33393e;
+      box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.25),
+      -15px -15px 20px rgba(255, 255, 255, 0.1);
+}
+.dark .calculator #value {
+      background: #33393e;
+      color: #fff;
+      box-shadow: inset 15px 15px 20px rgba(0, 0, 0, 0.5),
+      inset -15px -15px 20px rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+}
+.dark .calculator span {
+      color: #fff;
+      border: 2px solid #33393e;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
+      -5px -5px 10px rgba(255, 255, 255, 0.1);
+}
+.dark .calculator span:active {
+      box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.25),
+      -5px -5px 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark .calculator #clear:active,
+.dark .calculator #plus:active,
+.dark .calculator #equal:active {
+      box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+      -5px -5px 10px rgba(255, 255, 255, 0.25);
+}
